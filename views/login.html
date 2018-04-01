@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no,adress=no">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <title>登录</title>
+  <link rel="stylesheet" href="../plugins/weui/weui.min.css">
+  <link rel="stylesheet" href="../styles/css/login.css">
+</head>
+<body>
+	<div class="wrapper wrapper-bgimage">
+    <header class="header">
+      <a class="left" href="javascript:;"></a>
+      <h1>登录</h1>
+    </header>
+    <div class="logo"><img src="../images/logo.png" alt=""></div>
+    <div class="login">
+      <div class="items">
+        <i><img src="../images/login_icon1.png" alt=""></i>
+        <label><input type="text" placeholder="手机号码/账号"></label>
+      </div>
+      <div class="items">
+        <i><img src="../images/login_icon2.png" alt=""></i>
+        <label><input type="password" placeholder="登录密码"></label>
+        <div class="silde"><div class="silde-left-right"></div></div>
+      </div>
+      <div class="btn">
+        <a href="javascript:;" onclick="onLogin();"><span>登录</span></a>
+      </div>
+      <p><a href="apply-photograph.html">申请成为摄影师</a><a href="forget.html">忘记密码</a></p>
+    </div>
+	</div>
+  <script src="../plugins/jquery/jquery-3.1.1.min.js"></script>
+  <script src="../scripts/flexible.js"></script>
+  <script src="../scripts/common.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".login .items .silde").on("click",function(){
+        $(this).toggleClass("on");
+        if(!$(this).hasClass("on")){
+          $(this).prev().find("input").prop('type','password');
+        }else{
+          $(this).prev().find("input").prop('type','text');
+        }
+      })
+    })
+    function onLogin(){
+      window.location.href="user.html";
+    }
+  </script>
+</body>
+</html>
+

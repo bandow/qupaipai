@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no,adress=no">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <title>约拍城市</title>
+  <link rel="stylesheet" href="../plugins/weui/weui.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/style.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/font-awesome.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.colors.min.css" >
+  <link rel="stylesheet" href="../styles/css/user.css">
+  <style>
+    .navbar a.link, .subnavbar a.link, .toolbar a.link{
+      color:#26282c;
+      font:.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
+      color:#26282c;
+    }
+    .picker-modal{
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+	<div class="wrapper wrapper-bgcolor">
+    <header class="header">
+      <a class="left" href="javascript:history.back(-1);"></a>
+      <h1>约拍城市</h1>
+      <a class="right" href="javascript:;"><span>保存</span></a>
+    </header>
+    <div class="city-info">
+      <div class="city-info-content">
+        <div class="items">
+          <span>城市一</span>
+          <label>
+            <input id="location" type="text" placeholder="选择城市">
+          </label>
+        </div>
+        <div class="items">
+          <span>城市二</span>
+          <label>
+            <input id="location1" type="text" placeholder="选择城市">
+          </label>
+        </div>
+        <div class="items">
+          <span>城市三</span>
+          <label>
+            <input id="location2" type="text" placeholder="选择城市">
+          </label>
+        </div>
+        <div class="items">
+          <span>城市四</span>
+          <label>
+            <input id="location3" type="text" placeholder="选择城市">
+          </label>
+        </div>
+      </div>
+      <p><i><img src="../images/prompt_icon.png" alt=""></i><span>温馨提示：</span></p>
+      <p>每个摄影师可以设置默认的5个可约拍城市，5个城市中不可重复 选择</p>
+    </div>
+	</div>
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../scripts/flexible.js"></script>
+  <script src="../scripts/common.js"></script>
+  <script src="../plugins/CityPicker/framework7.min.js"></script>
+  <script src="../plugins/CityPicker/regionsObject2.js"></script>
+  <script src="../plugins/CityPicker/cityPicker.js"></script>
+  <script>
+    $(document).ready(function(){
+        $(".select .select-list").on("click",function(){
+          $(this).addClass("on").siblings().removeClass("on");
+        })
+    });
+    </script>
+</body>
+</html>
+

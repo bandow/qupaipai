@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no,adress=no">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <title>个人信息</title>
+  <link rel="stylesheet" href="../plugins/weui/weui.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/style.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/font-awesome.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.colors.min.css" >
+  <link rel="stylesheet" href="../plugins/ioscalendar/FJL.picker.css" />
+  <style>
+      h5.mui-content-padded {
+        margin-left: 3px;
+        margin-top: 20px !important;
+      }
+      h5.mui-content-padded:first-child {
+        margin-top: 12px !important;
+      }
+      .mui-btn {
+        font-size: 16px;
+        padding: 8px;
+        margin: 3px;
+      }
+      .ui-alert {
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 16px;
+      }
+      * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+      }
+      .mui-dtpicker-title h5{
+        background-color: #fff;
+        font:.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
+        color:#26282c;
+        border-bottom:0;
+      }
+      .mui-dtpicker-title{
+        font-size:0;
+      }
+      .mui-picker{
+        background-color: #fff;
+      }
+      .mui-dtpicker-header button{
+        background: none;
+        border: none;
+        outline: none;
+      }
+  </style>
+  <link rel="stylesheet" href="../styles/css/user.css">
+  <style>
+    .navbar a.link, .subnavbar a.link, .toolbar a.link{
+      color:#26282c;
+      font:.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
+      color:#26282c;
+    }
+    .picker-modal{
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+	<div class="wrapper wrapper-bgcolor">
+    <header class="header">
+      <a class="left" href="javascript:history.back(-1);"></a>
+      <h1>个人信息</h1>
+      <a class="right" href="javascript:;"><span>保存</span></a>
+    </header>
+    <div class="info">
+     <a href="" class="head">
+      <div class="head-img"><img src="../images/head.jpg" alt=""></div>
+      <p>点击修改头像</p>
+     </a>
+    </div>
+    <div class="info-item">
+      <div class="items">
+        <span>手机</span>
+        <em>15989093293</em>
+      </div>
+      <div class="items">
+        <span>昵称</span>
+        <em>YESON</em>
+      </div>
+      <div class="items">
+        <span>身份证</span>
+        <label><input type="tel" placeholder="请输入身份证"></label>
+      </div>
+      <div class="items">
+        <span>性别</span>
+        <div class="select">
+          <div class="select-list on">
+            <i></i><span>男</span>
+          </div>
+          <div class="select-list">
+            <i></i><span>女</span>
+          </div>
+        </div>
+      </div>
+      <div class="items items-arrow">
+        <span>生日</span>
+        <label><button id='demo2' data-options='{"type":"date","beginYear":1920,"endYear":2018}' class="btn mui-btn mui-btn-block">选择生日</button></label>
+      </div>
+      <div class="items items-arrow">
+        <span>城市</span>
+        <label><input id="location" type="text" placeholder="选择城市"></label>
+      </div>
+    </div>
+	</div>
+  </div>
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../scripts/flexible.js"></script>
+  <script src="../scripts/common.js"></script>
+  <script src="../plugins/CityPicker/framework7.min.js"></script>
+  <script src="../plugins/CityPicker/regionsObject2.js"></script>
+  <script src="../plugins/CityPicker/cityPicker.js"></script>
+  <script src="../plugins/ioscalendar/FJL.min.js"></script>
+  <script src="../plugins/ioscalendar/FJL.picker.min.js"></script>
+  <script>
+      (function($) {
+        $.init();
+        var result = $('#demo2')[0];
+        var btns = $('.btn');
+        btns.each(function(i, btn) {
+          btn.addEventListener('tap', function() {
+            var optionsJson = this.getAttribute('data-options') || '{}';
+            var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            /*
+             * 首次显示时实例化组件
+             * 示例为了简洁，将 options 放在了按钮的 dom 上
+             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+             */
+            var picker = new $.DtPicker(options);
+            picker.show(function(rs) {
+              /*
+               * rs.value 拼合后的 value
+               * rs.text 拼合后的 text
+               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+               * rs.m 月，用法同年
+               * rs.d 日，用法同年
+               * rs.h 时，用法同年
+               * rs.i 分（minutes 的第二个字母），用法同年
+               */
+              result.innerText = rs.text;
+              /* 
+               * 返回 false 可以阻止选择框的关闭
+               * return false;
+               */
+              /*
+               * 释放组件资源，释放后将将不能再操作组件
+               * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+               * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+               * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+               */
+              picker.dispose();
+            });
+          }, false);
+        });
+      })(mui);
+  </script>
+  <script>
+    $(document).ready(function(){
+        $(".select .select-list").on("click",function(){
+          $(this).addClass("on").siblings().removeClass("on");
+        })
+    });
+  </script>
+</body>
+</html>
+
