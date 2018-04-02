@@ -37,8 +37,8 @@
 </head>
 <body>
   <div class="wrapper wrapper-bgcolor">
-    <header class="header">
-      <a class="left" href="javascript:;"><img src="../images/index_head.png" alt=""></a>
+    <header class="index-header">
+      <a class="left" href="javascript:;" onclick="userLeft();"><img src="../images/index_head.png" alt=""></a>
       <h1 onclick="selectCity();">默认城市</h1>
     </header> 
     <div class="paipai">
@@ -49,7 +49,7 @@
         <div class="top">
           <div class="price"><p>￥1000元</p></div>
           <div class="btn">
-            <a href=""><span>查看详情</span></a>
+            <a href="order-info.html"><span>查看详情</span></a>
             <a href=""><span>我要接单</span></a>
           </div>
         </div>
@@ -102,11 +102,87 @@
           <a href="tel:15989093923"><i><img src="../images/index_icon4.png" alt=""></i><span>15989093923</span></a>
         </div>
       </div>
+      <div class="dropload-load"><span class="loading"></span>加载中...</div>
+    </div>
+  </div>
+  <div class="mask" onclick="maskLeft()"></div>
+  <div class="wrapper-left">
+    <div class="head">
+      <i><img src="../images/head.jpg" alt=""></i>
+      <div class="text">
+        <h3>Bandow</h3>
+        <p>普通会员（可升级）</p>
+      </div>
+    </div>
+    <div class="left-list">
+      <a href="order.html"><i><img src="../images/index_left_icon1.png" alt=""></i><span>订单</span></a>
+      <a href="user.html"><i><img src="../images/index_left_icon2.png" alt=""></i><span>个人中心</span></a>
+      <a href="income.html"><i><img src="../images/index_left_icon3.png" alt=""></i><span>收益</span></a>
+      <a href="about.html"><i><img src="../images/index_left_icon4.png" alt=""></i><span>关于</span></a>
+    </div>
+    <div class="bottom">
+      <i><img src="../images/index_logo.png" alt=""></i><p>去拍拍摄影所有权</p>
     </div>
   </div>
   <script src="../plugins/jquery/jquery-3.1.1.min.js"></script>
   <script src="../scripts/flexible.js"></script>
   <script src="../scripts/common.js"></script>
+  <script>
+    var page=0;
+    var flag=true;
+    //--------------上拉加载更多---------------
+    //获取滚动条当前的位置 
+    function getScrollTop() {
+        var scrollTop = 0;
+        if(document.documentElement && document.documentElement.scrollTop) {
+            scrollTop = document.documentElement.scrollTop;
+        } else if(document.body) {
+            scrollTop = document.body.scrollTop;
+        }
+        return scrollTop;
+    }
+    //获取当前可视范围的高度 
+    function getClientHeight() {
+        var clientHeight = 0;
+        if(document.body.clientHeight && document.documentElement.clientHeight) {
+            clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+        } else {
+            clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+        }
+        return clientHeight;
+    }
+    //获取文档完整的高度 
+    function getScrollHeight() {
+        return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    }
+    //滚动事件触发
+    window.onscroll = function() {
+        if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+           if(flag==true){
+              flag=false;
+              $(".dropload-load").show();
+              page++;
+              console.log(page);
+              setTimeout(function(){
+                  $(".dropload-load").hide(); 
+                  // ajax加载第二页  定时器可以不需要的 调数据的时候定时器可以去掉
+              },5000);
+          }            
+        }
+    }
+    //-----------------结束--------------------
+    function userLeft(){
+      $(".mask").show();
+      $(".wrapper-left").addClass("on");
+    }
+    function maskLeft(){
+      $(".mask").hide();
+      $(".wrapper-left").removeClass("on");
+    }
+    function selectCity(){
+      window.location.href="select-city.html";
+    }
+  </script>
 </body>
 </html>
 
