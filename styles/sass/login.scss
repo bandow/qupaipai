@@ -218,7 +218,9 @@
 		}
 		>a{
 			font:.24rem/1.5 $font-style-base;
-			color:#26282c;	
+			color:#26282c;
+			border-left: 1px solid #ddd;
+    		padding-left: .2rem;	
 		}
 		.silde{
 			width:36px;

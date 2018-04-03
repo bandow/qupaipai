@@ -34,6 +34,21 @@
   <title>申请摄影师</title>
   <link rel="stylesheet" href="../plugins/weui/weui.min.css">
   <link rel="stylesheet" href="../styles/css/login.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.min.css">
+  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.colors.min.css" >
+  <style>
+    .navbar a.link, .subnavbar a.link, .toolbar a.link{
+      color:#26282c;
+      font:.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
+      color:#26282c;
+    }
+    .picker-modal{
+      background: #fff;
+    }
+    .picker-item span{
+      font-size:.3rem;
+    }
+  </style>
 </head>
 <body>
 	<div class="wrapper wrapper-bgcolor">
@@ -66,7 +81,7 @@
         </div>
         <div class="items">
           <span>所在区域：</span>
-          <label><input type="tel" placeholder="选择所在省份、城市、区县"></label>
+          <label><input type="tel" id="location" placeholder="选择所在省份、城市、区县"></label>
           <i></i>
         </div>
         <div class="items">
@@ -82,6 +97,9 @@
   <script src="../plugins/jquery/jquery-3.1.1.min.js"></script>
   <script src="../scripts/flexible.js"></script>
   <script src="../scripts/common.js"></script>
+  <script src="../plugins/CityPicker/framework7.min.js"></script>
+  <script src="../plugins/CityPicker/regionsObject2.js"></script>
+  <script src="../plugins/CityPicker/cityPicker.js"></script>
 </body>
 </html>
 
