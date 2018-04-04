@@ -78,17 +78,17 @@
                         </div>',
         cols: [{
                 cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'left',
+                width: '50%',
+                textAlign: 'center',
                 values: province,
                 onChange: function(picker, province) {
                     if (picker.cols[1].replaceValues) {
                         provinceSelect = province;
                         city = getCity(regions, province);
-                        area = getArea(regions, province, city[0]);
+                        // area = getArea(regions, province, city[0]);
                         picker.cols[1].replaceValues(city);
                         if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
+                            // picker.cols[2].replaceValues(area);
                         } else {
                             picker.cols[2].replaceValues(city);
                         }
@@ -97,26 +97,27 @@
             },
             {
                 cssClass: 'f-s-14',
-                width: '33.33%',
+                width: '50%',
                 textAlign: 'center',
                 values: city,
-                onChange: function(picker, city) {
-                    if (picker.cols[2].replaceValues) {
-                        area = getArea(regions, provinceSelect, city);
-                        if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
-                        } else {
-                            picker.cols[2].replaceValues([city]);
-                        }
-                    }
-                }
-            },
-            {
-                cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'right',
-                values: area,
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
             }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '50%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
         ]
     });
 
@@ -138,17 +139,17 @@
                         </div>',
         cols: [{
                 cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'left',
+                width: '50%',
+                textAlign: 'center',
                 values: province,
                 onChange: function(picker, province) {
                     if (picker.cols[1].replaceValues) {
                         provinceSelect = province;
                         city = getCity(regions, province);
-                        area = getArea(regions, province, city[0]);
+                        // area = getArea(regions, province, city[0]);
                         picker.cols[1].replaceValues(city);
                         if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
+                            // picker.cols[2].replaceValues(area);
                         } else {
                             picker.cols[2].replaceValues(city);
                         }
@@ -157,26 +158,27 @@
             },
             {
                 cssClass: 'f-s-14',
-                width: '33.33%',
+                width: '50%',
                 textAlign: 'center',
                 values: city,
-                onChange: function(picker, city) {
-                    if (picker.cols[2].replaceValues) {
-                        area = getArea(regions, provinceSelect, city);
-                        if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
-                        } else {
-                            picker.cols[2].replaceValues([city]);
-                        }
-                    }
-                }
-            },
-            {
-                cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'right',
-                values: area,
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
             }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '33.33%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
         ]
     });
 
@@ -198,17 +200,17 @@
                         </div>',
         cols: [{
                 cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'left',
+                width: '50%',
+                textAlign: 'center',
                 values: province,
                 onChange: function(picker, province) {
                     if (picker.cols[1].replaceValues) {
                         provinceSelect = province;
                         city = getCity(regions, province);
-                        area = getArea(regions, province, city[0]);
+                        // area = getArea(regions, province, city[0]);
                         picker.cols[1].replaceValues(city);
                         if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
+                            // picker.cols[2].replaceValues(area);
                         } else {
                             picker.cols[2].replaceValues(city);
                         }
@@ -217,26 +219,27 @@
             },
             {
                 cssClass: 'f-s-14',
-                width: '33.33%',
+                width: '50%',
                 textAlign: 'center',
                 values: city,
-                onChange: function(picker, city) {
-                    if (picker.cols[2].replaceValues) {
-                        area = getArea(regions, provinceSelect, city);
-                        if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
-                        } else {
-                            picker.cols[2].replaceValues([city]);
-                        }
-                    }
-                }
-            },
-            {
-                cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'right',
-                values: area,
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
             }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '33.33%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
         ]
     });
 
@@ -258,17 +261,17 @@
                         </div>',
         cols: [{
                 cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'left',
+                width: '50%',
+                textAlign: 'center',
                 values: province,
                 onChange: function(picker, province) {
                     if (picker.cols[1].replaceValues) {
                         provinceSelect = province;
                         city = getCity(regions, province);
-                        area = getArea(regions, province, city[0]);
+                        // area = getArea(regions, province, city[0]);
                         picker.cols[1].replaceValues(city);
                         if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
+                            // picker.cols[2].replaceValues(area);
                         } else {
                             picker.cols[2].replaceValues(city);
                         }
@@ -277,26 +280,147 @@
             },
             {
                 cssClass: 'f-s-14',
-                width: '33.33%',
+                width: '50%',
                 textAlign: 'center',
                 values: city,
-                onChange: function(picker, city) {
-                    if (picker.cols[2].replaceValues) {
-                        area = getArea(regions, provinceSelect, city);
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
+            }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '33.33%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
+        ]
+    });
+    var pickerLocation = myApp.picker({
+        input: '#location4',
+        rotateEffect: true,
+        toolbarTemplate: '<div class="toolbar">\
+                            <div class="toolbar-inner">\
+                                <div class="left">\
+                                    <a href="#" class="link close-picker">取消</a>\
+                                </div>\
+                                <div class="middle">\
+                                    <a href="#" class="link close-picker">选择城市</a>\
+                                </div>\
+                                <div class="right">\
+                                    <a href="#" class="link close-picker">完成</a>\
+                                </div>\
+                            </div>\
+                        </div>',
+        cols: [{
+                cssClass: 'f-s-14',
+                width: '50%',
+                textAlign: 'center',
+                values: province,
+                onChange: function(picker, province) {
+                    if (picker.cols[1].replaceValues) {
+                        provinceSelect = province;
+                        city = getCity(regions, province);
+                        // area = getArea(regions, province, city[0]);
+                        picker.cols[1].replaceValues(city);
                         if (area.length !== 0) {
-                            picker.cols[2].replaceValues(area);
+                            // picker.cols[2].replaceValues(area);
                         } else {
-                            picker.cols[2].replaceValues([city]);
+                            picker.cols[2].replaceValues(city);
                         }
                     }
                 }
             },
             {
                 cssClass: 'f-s-14',
-                width: '33.33%',
-                textAlign: 'right',
-                values: area,
+                width: '50%',
+                textAlign: 'center',
+                values: city,
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
             }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '33.33%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
+        ]
+    });
+    var pickerLocation = myApp.picker({
+        input: '#location5',
+        rotateEffect: true,
+        toolbarTemplate: '<div class="toolbar">\
+                            <div class="toolbar-inner">\
+                                <div class="left">\
+                                    <a href="#" class="link close-picker">取消</a>\
+                                </div>\
+                                <div class="middle">\
+                                    <a href="#" class="link close-picker">选择城市</a>\
+                                </div>\
+                                <div class="right">\
+                                    <a href="#" class="link close-picker">完成</a>\
+                                </div>\
+                            </div>\
+                        </div>',
+        cols: [{
+                cssClass: 'f-s-14',
+                width: '50%',
+                textAlign: 'center',
+                values: province,
+                onChange: function(picker, province) {
+                    if (picker.cols[1].replaceValues) {
+                        provinceSelect = province;
+                        city = getCity(regions, province);
+                        // area = getArea(regions, province, city[0]);
+                        picker.cols[1].replaceValues(city);
+                        if (area.length !== 0) {
+                            // picker.cols[2].replaceValues(area);
+                        } else {
+                            picker.cols[2].replaceValues(city);
+                        }
+                    }
+                }
+            },
+            {
+                cssClass: 'f-s-14',
+                width: '50%',
+                textAlign: 'center',
+                values: city,
+                // onChange: function(picker, city) {
+                //     if (picker.cols[2].replaceValues) {
+                //         area = getArea(regions, provinceSelect, city);
+                //         if (area.length !== 0) {
+                //             picker.cols[2].replaceValues(area);
+                //         } else {
+                //             picker.cols[2].replaceValues([city]);
+                //         }
+                //     }
+                // }
+            }
+            // ,
+            // {
+            //     cssClass: 'f-s-14',
+            //     width: '33.33%',
+            //     textAlign: 'right',
+            //     values: area,
+            // }
         ]
     });
 
