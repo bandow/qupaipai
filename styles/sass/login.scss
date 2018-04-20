@@ -337,6 +337,12 @@
 		span{
 			font:.24rem/1.5 $font-style-base;
 			color:#26282c;
+			&:nth-child(2){
+				font:.24rem/1.5 $font-style-base;
+				color:#26282c;
+				flex:1;
+				text-align:right;
+			}
 		}
 		label{
 			margin-left:.4rem;
@@ -405,6 +411,11 @@
 			span{
 				font:.24rem/1.5 $font-style-base;
 				color:#26282c;
+				&:nth-child(2){
+					font:.24rem/1.5 $font-style-base;
+					color:#26282c;
+					padding-right:.3rem;
+				}
 			}
 			label{
 				margin:0 .4rem;

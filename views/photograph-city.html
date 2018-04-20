@@ -33,21 +33,8 @@
   <meta name="x5-page-mode" content="app">  
   <title>约拍城市</title>
   <link rel="stylesheet" href="../plugins/weui/weui.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/style.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/font-awesome.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.colors.min.css" >
+  <link rel="stylesheet" href="../plugins/picker/github-light.css">
   <link rel="stylesheet" href="../styles/css/user.css">
-  <style>
-    .navbar a.link, .subnavbar a.link, .toolbar a.link{
-      color:#26282c;
-      font:.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
-      color:#26282c;
-    }
-    .picker-modal{
-      background: #fff;
-    }
-  </style>
 </head>
 <body>
 	<div class="wrapper wrapper-bgcolor">
@@ -60,33 +47,23 @@
       <div class="city-info-content">
         <div class="items">
           <span>城市一</span>
-          <label>
-            <input id="location1" type="text" placeholder="选择城市">
-          </label>
+          <span class="city" data-id="1" onclick="selectCity(this);">选择所在省份、城市</span>
         </div>
         <div class="items">
           <span>城市二</span>
-          <label>
-            <input id="location2" type="text" placeholder="选择城市">
-          </label>
+         <span class="city" data-id="2" onclick="selectCity(this);">选择所在省份、城市</span>
         </div>
         <div class="items">
           <span>城市三</span>
-          <label>
-            <input id="location3" type="text" placeholder="选择城市">
-          </label>
+         <span class="city" data-id="3" onclick="selectCity(this);">选择所在省份、城市</span>
         </div>
         <div class="items">
           <span>城市四</span>
-          <label>
-            <input id="location4" type="text" placeholder="选择城市">
-          </label>
+         <span class="city" data-id="4" onclick="selectCity(this);">选择所在省份、城市</span>
         </div>
          <div class="items">
           <span>城市五</span>
-          <label>
-            <input id="location5" type="text" placeholder="选择城市">
-          </label>
+         <span class="city" data-id="5" onclick="selectCity(this);">选择所在省份、城市</span>
         </div>
       </div>
       <p><i><img src="../images/prompt_icon.png" alt=""></i><span>温馨提示：</span></p>
@@ -96,16 +73,9 @@
   <script src="../plugins/jquery/jquery.min.js"></script>
   <script src="../scripts/flexible.js"></script>
   <script src="../scripts/common.js"></script>
-  <script src="../plugins/CityPicker/framework7.min.js"></script>
-  <script src="../plugins/CityPicker/regionsObject2.js"></script>
-  <script src="../plugins/CityPicker/cityPicker.js"></script>
-  <script>
-    $(document).ready(function(){
-        $(".select .select-list").on("click",function(){
-          $(this).addClass("on").siblings().removeClass("on");
-        })
-    });
-    </script>
+  <script src="../plugins/picker/picker.min.js"></script>
+  <script src="../plugins/picker/city.js"></script>
+  <script src="../plugins/picker/index.js"></script>
 </body>
 </html>
 

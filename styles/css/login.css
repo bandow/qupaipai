@@ -718,6 +718,16 @@ input {
   color: #26282c;
 }
 
+.apply-data-items .items span:nth-child(2) {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #26282c;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+}
+
 .apply-data-items .items label {
   margin-left: .4rem;
   font-size: 0;
@@ -810,6 +820,12 @@ input {
 .city-info .city-info-content .items span {
   font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #26282c;
+}
+
+.city-info .city-info-content .items span:nth-child(2) {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #26282c;
+  padding-right: .3rem;
 }
 
 .city-info .city-info-content .items label {

@@ -33,62 +33,104 @@
   <meta name="x5-page-mode" content="app">  
   <title>个人信息</title>
   <link rel="stylesheet" href="../plugins/weui/weui.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/style.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/font-awesome.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.min.css">
-  <link rel="stylesheet" href="../plugins/CityPicker/framework7.ios.colors.min.css" >
-  <link rel="stylesheet" href="../plugins/ioscalendar/FJL.picker.css" />
+  <link rel="stylesheet" href="../plugins/daterangepicke/daterangepicker.css">
+  <link rel="stylesheet" href="../plugins/picker/github-light.css">
   <style>
-      h5.mui-content-padded {
-        margin-left: 3px;
-        margin-top: 20px !important;
-      }
-      h5.mui-content-padded:first-child {
-        margin-top: 12px !important;
-      }
-      .mui-btn {
-        font-size: 16px;
-        padding: 8px;
-        margin: 3px;
-      }
-      .ui-alert {
-        text-align: center;
-        padding: 20px 10px;
-        font-size: 16px;
-      }
-      * {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-      }
-      .mui-dtpicker-title h5{
-        background-color: #fff;
-        font:.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
-        color:#26282c;
-        border-bottom:0;
-      }
-      .mui-dtpicker-title{
-        font-size:0;
-      }
-      .mui-picker{
-        background-color: #fff;
-      }
-      .mui-dtpicker-header button{
-        background: none;
-        border: none;
-        outline: none;
-      }
+    .date-picker-wrapper{z-index:10!important;}
+    .date-picker-wrapper .last-date-selected{background-color: #26282c !important;border-radius: 0 100% 100% 0;}
+    .date-picker-wrapper .first-date-selected{
+      background-color: #26282c !important;border-radius: 5px;
+    }
+    .date-picker-wrapper .first-date-selected>div{background:#26282c; border-radius:5px 0 0 5px;}
+    .date-picker-wrapper .last-date-selected>div{background:#26282c;border-radius:0 5px 5px 0;}
+    .swiper-pagination{text-align:center;}
+    .swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
+    .swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
+    .date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
+    .date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+    .options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+    .date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
+    .date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
+    .date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
+    .date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
+    .date-picker-wrapper .month-wrapper {
+      border: none;
+      border-radius: 0;
+      background-color: #fff;
+      padding: 0;
+      cursor: default;
+      position: absolute;
+      bottom:0;
+      height:80vh;
+      overflow-y: auto;
+    }
+    .date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
+    .date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
+    width: 14.2857143%;
+    padding:0;
+    -webkit-box-sizing: border-box; /*Safari3.2+*/
+    box-sizing: border-box;
+    }
+    .date-picker-wrapper .drp_top-bar {
+      position: absolute;
+      padding: 0;
+      left: 0;
+      width: 100%;
+      top:0;
+      height: 8vh;
+      background: #f2f2f2;
+      line-height: 8vh;
+    }
+    .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
+    border: 0;
+      background: none;
+      display: block;
+      height: 8vh;
+      top: 0;
+      right: 20px;
+      color:#333;
+    }
+    .date-picker-wrapper .month-name{    
+    color: #000;
+      font-size: 14px;
+    }
+    .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+      background:#fff;
+    }
+    .date-picker-wrapper .selected-days {
+      font-weight: bold;
+      font-size: 14px;
+      font-style: normal;
+    }
+    .date-picker-wrapper .month-wrapper table .week-name {
+      height: 50px;
+      line-height: 50px;
+    }
+    .date-picker-wrapper table .caption {
+      height: 50px;
+    }
+    .date-picker-wrapper .month-wrapper table .day.checked{
+    background-color: #26282c;    
+    }
+    .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
+      color: #26282c;
+      cursor: pointer;
+    }
+    .date-picker-wrapper .month-wrapper table .day.real-today{
+    background-color:transparent;
+    }
+    .date-picker-wrapper .month-wrapper table .day{
+    line-height:3.8;
+    font-size:12px;
+    }
+    .date-picker-wrapper table .caption .next, .date-picker-wrapper table .caption .prev{
+      font-family:Simsun,"Microsoft Yahei",STHeiti,Tahoma,sans-serif;
+    }
   </style>
   <link rel="stylesheet" href="../styles/css/user.css">
-  <style>
-    .navbar a.link, .subnavbar a.link, .toolbar a.link{
-      color:#26282c;
-      font:.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue","Microsoft Yahei",STHeiti,Tahoma,Simsun,sans-serif;
-      color:#26282c;
-    }
-    .picker-modal{
-      background: #fff;
-    }
-  </style>
 </head>
 <body>
 	<div class="wrapper wrapper-bgcolor">
@@ -129,72 +171,45 @@
       </div>
       <div class="items items-arrow">
         <span>生日</span>
-        <label><button id='demo2' data-options='{"type":"date","beginYear":1920,"endYear":2018}' class="btn mui-btn mui-btn-block">选择生日</button></label>
+        <label><input type="text" id="date1" placeholder="选择生日"></label>
       </div>
       <div class="items items-arrow">
         <span>城市</span>
-        <label><input id="location" type="text" placeholder="选择城市"></label>
+        <span class="city" data-id="1" style="width:80%;margin:0;" onclick="selectCity(this);">选择所在省份、城市</span>
       </div>
     </div>
 	</div>
-  </div>
   <script src="../plugins/jquery/jquery.min.js"></script>
   <script src="../scripts/flexible.js"></script>
   <script src="../scripts/common.js"></script>
-  <script src="../plugins/CityPicker/framework7.min.js"></script>
-  <script src="../plugins/CityPicker/regionsObject2.js"></script>
-  <script src="../plugins/CityPicker/cityPicker.js"></script>
-  <script src="../plugins/ioscalendar/FJL.min.js"></script>
-  <script src="../plugins/ioscalendar/FJL.picker.min.js"></script>
-  <script>
-      (function($) {
-        $.init();
-        var result = $('#demo2')[0];
-        var btns = $('.btn');
-        btns.each(function(i, btn) {
-          btn.addEventListener('tap', function() {
-            var optionsJson = this.getAttribute('data-options') || '{}';
-            var options = JSON.parse(optionsJson);
-            var id = this.getAttribute('id');
-            /*
-             * 首次显示时实例化组件
-             * 示例为了简洁，将 options 放在了按钮的 dom 上
-             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
-             */
-            var picker = new $.DtPicker(options);
-            picker.show(function(rs) {
-              /*
-               * rs.value 拼合后的 value
-               * rs.text 拼合后的 text
-               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
-               * rs.m 月，用法同年
-               * rs.d 日，用法同年
-               * rs.h 时，用法同年
-               * rs.i 分（minutes 的第二个字母），用法同年
-               */
-              result.innerText = rs.text;
-              /* 
-               * 返回 false 可以阻止选择框的关闭
-               * return false;
-               */
-              /*
-               * 释放组件资源，释放后将将不能再操作组件
-               * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
-               * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
-               * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
-               */
-              picker.dispose();
-            });
-          }, false);
-        });
-      })(mui);
-  </script>
+  <script src="../plugins/picker/picker.min.js"></script>
+  <script src="../plugins/picker/city.js"></script>
+  <script src="../plugins/picker/index.js"></script>
+  <script src="../plugins/daterangepicke/moment.min.js"></script>
+  <script src="../plugins/daterangepicke/jquery.daterangepicker.js"></script>
   <script>
     $(document).ready(function(){
         $(".select .select-list").on("click",function(){
           $(this).addClass("on").siblings().removeClass("on");
         })
     });
+  </script>
+  <script>
+    $(document).ready(function () {       
+         $('#date1').dateRangePicker({
+            autoClose: true,
+            singleDate : true,
+            showShortcuts:false,   //去掉快捷html
+            inline:false,
+            singleMonth:false,  //true显示1个月，false为2个月
+            batchMode:true,
+            stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
+            // extraClass:'dengcb',  //添加class
+            showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
+            selectForward:false,   //true选择开始的时间前面就不能选，默认false
+            selectBackward:false,  //true只能选择1天     
+         })
+     }); 
   </script>
 </body>
 </html>
