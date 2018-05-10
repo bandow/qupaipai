@@ -132,44 +132,83 @@
     var flag=true;
     //--------------上拉加载更多---------------
     //获取滚动条当前的位置 
-    function getScrollTop() {
-        var scrollTop = 0;
-        if(document.documentElement && document.documentElement.scrollTop) {
-            scrollTop = document.documentElement.scrollTop;
-        } else if(document.body) {
-            scrollTop = document.body.scrollTop;
-        }
-        return scrollTop;
+    // function getScrollTop() {
+    //     var scrollTop = 0;
+    //     if(document.documentElement && document.documentElement.scrollTop) {
+    //         scrollTop = document.documentElement.scrollTop;
+    //     } else if(document.body) {
+    //         scrollTop = document.body.scrollTop;
+    //     }
+    //     return scrollTop;
+    // }
+    // //获取当前可视范围的高度 
+    // function getClientHeight() {
+    //     var clientHeight = 0;
+    //     if(document.body.clientHeight && document.documentElement.clientHeight) {
+    //         clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    //     } else {
+    //         clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+    //     }
+    //     return clientHeight;
+    // }
+    // //获取文档完整的高度 
+    // function getScrollHeight() {
+    //     return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    // }
+    // //滚动事件触发
+    // window.onscroll = function() {
+    //     if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+    //        if(flag==true){
+    //           flag=false;
+    //           $(".dropload-load").show();
+    //           page++;
+    //           console.log(page);
+    //           setTimeout(function(){
+    //               $(".dropload-load").hide(); 
+    //               // ajax加载第二页  定时器可以不需要的 调数据的时候定时器可以去掉
+    //           },5000);
+    //       }            
+    //     }
+    // }
+
+    function droploadLoad(){
+      if(flag==true){
+        flag=false;
+        $(".dropload-load").show();
+        page++;
+        console.log(page);
+        setTimeout(function(){
+            $(".dropload-load").hide(); 
+            // ajax加载第二页  定时器可以不需要的 调数据的时候定时器可以去掉
+        },5000);
+      }
     }
-    //获取当前可视范围的高度 
-    function getClientHeight() {
-        var clientHeight = 0;
-        if(document.body.clientHeight && document.documentElement.clientHeight) {
-            clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
-        } else {
-            clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
-        }
-        return clientHeight;
+
+     loadMoreHandle(droploadLoad);
+
+    /**
+     * 页面到达底部，加载更多 
+     * @param { function } callback - 回调函数
+    **/
+    function loadMoreHandle(callback){
+        window.addEventListener('scroll',function() {
+            if(isSlideToBottom()){
+                callback();
+            }
+        }, false);
     }
-    //获取文档完整的高度 
-    function getScrollHeight() {
-        return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+
+    //判断是否滑到离底部5像素的距离
+    function isSlideToBottom(){
+        var scrollTop=document.documentElement.scrollTop || document.body.scrollTop || 0,             //获取滚动条当前的位置
+            clientHeight=document.documentElement.clientHeight || document.body.clientHeight || 0,    //获取网页可见区域高
+            scrollHeight=document.documentElement.scrollHeight || document.body.scrollHeight || 0;    //获取网页总高度
+
+        return scrollTop + clientHeight > scrollHeight-20;
     }
-    //滚动事件触发
-    window.onscroll = function() {
-        if(getScrollTop() + getClientHeight() == getScrollHeight()) {
-           if(flag==true){
-              flag=false;
-              $(".dropload-load").show();
-              page++;
-              console.log(page);
-              setTimeout(function(){
-                  $(".dropload-load").hide(); 
-                  // ajax加载第二页  定时器可以不需要的 调数据的时候定时器可以去掉
-              },5000);
-          }            
-        }
-    }
+
+
+
     //-----------------结束--------------------
     function userLeft(){
       $(".mask").show();
