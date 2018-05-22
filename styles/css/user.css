@@ -894,3 +894,238 @@ input {
 .picker .picker-panel .wheel-wrapper .wheel .wheel-scroll .wheel-item {
   font-size: .3rem !important;
 }
+
+/*pisa-user*/
+.pisa-user .pisa-user-card {
+  position: relative;
+  padding: .4rem .3rem;
+  margin: .25rem auto;
+  width: 7rem;
+  height: auto;
+  min-height: 3.77rem;
+  background: url("../../images/card.png") no-repeat;
+  background-size: 100% auto;
+}
+
+.pisa-user .pisa-user-card .logo {
+  position: relative;
+  width: 1.37rem;
+  height: .57rem;
+  font-size: 0;
+}
+
+.pisa-user .pisa-user-card .logo > img {
+  width: 100%;
+}
+
+.pisa-user .pisa-user-card .logo p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 0.14rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
+.pisa-user .pisa-user-card .name {
+  position: absolute;
+  bottom: .4rem;
+}
+
+.pisa-user .pisa-user-card .name > p {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
+.pisa-user .pisa-user-card .code {
+  position: absolute;
+  top: .4rem;
+  right: .3rem;
+  background-color: #fff;
+  padding: 2px;
+}
+
+.pisa-user .pisa-integral-store {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pisa-user .pisa-integral-store a {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.pisa-user .pisa-integral-store a p {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+
+.pisa-user .pisa-integral-store a h3 {
+  font: 0.36rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #ff972b;
+}
+
+.pisa-user .pisa-integral-store a h3 em {
+  font-size: .24rem;
+}
+
+.pisa-user .pisa-info {
+  margin-top: .2rem;
+  padding: 0 .3rem;
+  background-color: #fff;
+}
+
+.pisa-user .pisa-info .item {
+  padding: .3rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.pisa-user .pisa-info .item:last-child {
+  border-bottom: 0;
+}
+
+.pisa-user .pisa-info .item a {
+  padding: .2rem 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pisa-user .pisa-info .item a:nth-child(2) {
+  border-left: 1px solid #ddd;
+}
+
+.pisa-user .pisa-info .item a i {
+  margin-right: .2rem;
+  font-size: 0;
+  width: .26rem;
+  height: .26rem;
+}
+
+.pisa-user .pisa-info .item a i > img {
+  width: 100%;
+  height: 100%;
+}
+
+.pisa-user .pisa-info .item a p {
+  font: bold 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: none;
+  background-color: #000;
+  opacity: .7;
+}
+
+.pisa-layer {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 10;
+  display: none;
+  width: 90%;
+  padding-top: 1.68rem;
+  text-align: center;
+  /* border-bottom:1px solid #fafafa;*/
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.pisa-layer .logo {
+  margin: 0 auto 1.8rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  font-size: 0;
+  background-color: #fff;
+  border-radius: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pisa-layer .logo > img {
+  width: 75%;
+}
+
+.pisa-layer .card {
+  margin: .5rem auto;
+  background-color: #fff;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pisa-layer > p {
+  font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
+.pisa-layer > p:last-child {
+  padding-bottom: .3rem;
+}
